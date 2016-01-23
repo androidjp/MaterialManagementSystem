@@ -1,0 +1,20 @@
+<resources>
+    <!--<string name="app_name">MaterialManagementSystem</string>-->
+    <string name="app_name">物资管理系统</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- IconFont -->
+    <string name="icon_to">&#xe61f;</string>
+    <string name="icon_back_bar">&#xe60b;</string>
+    <string name="icon_phone">&#xe604;</string>
+    <string name="icon_tip_littlething">&#xe602;</string>
+    <string name="iconfont_record">&#xe601;</string>
+    <string name="iconfont_store">&#xe607;</string>
+    <string name="iconfont_phones">&#xe626;</string>
+    <string name="iconfont_addRecord">&#xe600;</string>
+
+</resources>

@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\view_normal_refresh_footer.xml",
+        "source": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\view_normal_refresh_footer.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\view_refresh_header_normal.xml",
+        "source": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\view_refresh_header_normal.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\view_refresh_header_mooc_style.xml",
+        "source": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\view_refresh_header_mooc_style.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\view_refresh_header_meituan.xml",
+        "source": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\view_refresh_header_meituan.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\view_refresh_header_stickiness.xml",
+        "source": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\view_refresh_header_stickiness.xml"
+    }
+]

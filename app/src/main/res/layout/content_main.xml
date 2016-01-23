@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <include layout="@layout/tab_bottom"
+        android:id="@+id/tab_bottom"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"/>
+
+    <com.fighting.materialmanagementsystem.views.IconFontView
+        android:id="@+id/iconfont_addrecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iconfont_addRecord"
+        android:textColor="#ec3300"
+        android:layout_above="@id/tab_bottom"
+        android:layout_alignParentRight="true"
+        android:textSize="40dp"
+        android:layout_margin="10dp"/>
+
+</RelativeLayout>
