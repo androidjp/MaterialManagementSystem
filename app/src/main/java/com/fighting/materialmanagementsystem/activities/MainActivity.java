@@ -22,7 +22,7 @@ import com.fighting.materialmanagementsystem.adapters.MainFragmentAdapter;
 import com.fighting.materialmanagementsystem.fragments.PhonesFragment;
 import com.fighting.materialmanagementsystem.fragments.RecordFragment;
 import com.fighting.materialmanagementsystem.fragments.StoreFragment;
-import com.fighting.materialmanagementsystem.views.IconFontView;
+import com.fighting.materialmanagementsystem.utils.SystemBarChanger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity
 
         setContentView(R.layout.activity_main);
 
+        SystemBarChanger.initSystemBar(this, R.color.colorPrimary);
         initViews();
     }
 
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity
         //初始化Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setElevation(0);
 
         //初始化右下角悬浮按钮
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -94,8 +96,6 @@ public class MainActivity extends AppCompatActivity
         record_tab.setOnClickListener(this);
         store_tab.setOnClickListener(this);
         record_tab.setSelected(true);
-        ((IconFontView) findViewById(R.id.iconfont_addrecord)).setOnClickListener(this);
-
 
     }
 

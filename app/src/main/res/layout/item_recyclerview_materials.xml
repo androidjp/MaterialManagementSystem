@@ -1,8 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+        <TextView
+            android:id="@+id/tv_material_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大声公"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_actuallynum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="40"
+            android:textColor="@color/text_normal_gray"
+            android:textSize="20sp"
+            android:layout_below="@id/tv_material_name"/>
+
+        <TextView
+            android:id="@+id/tv_useless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textColor="@color/text_normal_gray"
+            android:textSize="20sp"
+            android:layout_marginRight="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_alignBottom="@id/tv_actuallynum"
+            android:layout_toRightOf="@id/tv_actuallynum"/>
+
+        <TextView
+            android:id="@+id/tv_totalnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="40"
+            android:textColor="@color/text_normal_gray"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/tv_useless"
+            android:layout_alignBottom="@id/tv_actuallynum"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/tv_actuallynum">
+
+            <com.fighting.materialmanagementsystem.views.IconFontView
+                android:id="@+id/tv_material_money_signal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iconfont_money_sigal"
+                android:textSize="15dp"
+                android:textColor="@color/money_orange"
+                android:layout_marginRight="8dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_material_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30"
+                android:textColor="@color/money_orange"
+                android:textSize="24sp"/>
+        </LinearLayout>
+    </RelativeLayout>
 
 
 
-</LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center">
+
+        <com.fighting.materialmanagementsystem.views.IconFontView
+            android:id="@+id/material_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20dp"
+            android:text="@string/iconfont_material_remove"
+            android:visibility="invisible"
+            />
+
+        <EditText
+            android:id="@+id/et_requested_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"/>
+
+        <com.fighting.materialmanagementsystem.views.IconFontView
+            android:id="@+id/material_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20dp"
+            android:text="@string/iconfont_material_remove"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

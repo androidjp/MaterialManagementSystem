@@ -44,11 +44,11 @@
         "source": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\src\\main\\res\\mipmap-hdpi\\refresh_head_arrow.png"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi-v4\\bga_refresh_loading05.png",
-        "source": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\src\\main\\res\\mipmap-hdpi\\bga_refresh_loading05.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi-v4\\bga_refresh_loading08.png",
         "source": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\src\\main\\res\\mipmap-hdpi\\bga_refresh_loading08.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi-v4\\bga_refresh_loading05.png",
+        "source": "D:\\AndroidStudioProjects\\MaterialManagementSystem\\library\\src\\main\\res\\mipmap-hdpi\\bga_refresh_loading05.png"
     }
 ]

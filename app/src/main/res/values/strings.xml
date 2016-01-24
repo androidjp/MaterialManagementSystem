@@ -15,6 +15,11 @@
     <string name="iconfont_record">&#xe601;</string>
     <string name="iconfont_store">&#xe607;</string>
     <string name="iconfont_phones">&#xe626;</string>
+    <!-- 以下要改 -->
     <string name="iconfont_addRecord">&#xe600;</string>
+    <string name="iconfont_search">&#xe600;</string>
+    <string name="iconfont_money_sigal">&#xe600;</string>
+    <string name="iconfont_material_add">&#xe600;</string>
+    <string name="iconfont_material_remove">&#xe600;</string>
 
 </resources>

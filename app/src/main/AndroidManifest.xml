@@ -23,7 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MaterialsListActivity"/>
+        <activity android:name=".activities.MaterialsListActivity" android:theme="@style/mAppThemeNoActionBar"/>
+        <activity android:name=".activities.RecordDetailsActivity"/>
+
 
     </application>
 

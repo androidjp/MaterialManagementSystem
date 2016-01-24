@@ -20,4 +20,15 @@
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
+    <com.fighting.materialmanagementsystem.views.IconFontView
+        android:id="@+id/iconfont_addrecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iconfont_addRecord"
+        android:textColor="#ec3300"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:textSize="40dp"
+        android:layout_margin="10dp"/>
+
 </RelativeLayout>

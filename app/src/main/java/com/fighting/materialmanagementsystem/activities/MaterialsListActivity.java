@@ -1,7 +1,6 @@
 package com.fighting.materialmanagementsystem.activities;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +8,8 @@ import android.view.View;
 
 import com.fighting.materialmanagementsystem.R;
 import com.fighting.materialmanagementsystem.adapters.DepartmentsRecyclerViewAdapter;
-import com.fighting.materialmanagementsystem.adapters.MaterialsListViewAdapter;
+import com.fighting.materialmanagementsystem.adapters.MaterialsRecyclerViewAdapter;
+import com.fighting.materialmanagementsystem.utils.SystemBarChanger;
 
 /**
  * Created by laisixiang on 2016/1/20.
@@ -19,10 +19,11 @@ public class MaterialsListActivity extends AppCompatActivity implements View.OnC
     private RecyclerView rv_materials;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
-        setContentView(R.layout.activity_materials_listview);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
+        setContentView(R.layout.activity_materials_list);
+        SystemBarChanger.initSystemBar(this, R.color.colorPrimary);
 
         initViews();
     }
@@ -31,12 +32,15 @@ public class MaterialsListActivity extends AppCompatActivity implements View.OnC
         rv_departments = (RecyclerView) findViewById(R.id.departments_recyclerview);
         rv_materials = (RecyclerView) findViewById(R.id.materials_recyclerview);
 
-        rv_departments.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-        rv_materials.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        rv_departments.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        rv_materials.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
+        DepartmentsRecyclerViewAdapter adapter_D = new DepartmentsRecyclerViewAdapter();
+        MaterialsRecyclerViewAdapter adapter_M = new MaterialsRecyclerViewAdapter();
+        rv_departments.setAdapter(adapter_D);
+        rv_materials.setAdapter(adapter_M);
 
 
-        rv_departments.setAdapter(new DepartmentsRecyclerViewAdapter());
-        rv_materials.setAdapter(new MaterialsListViewAdapter());
 
 
     }
@@ -45,4 +49,5 @@ public class MaterialsListActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
 
     }
+
 }

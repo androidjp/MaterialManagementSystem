@@ -11,9 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.fighting.materialmanagementsystem.R;
+import com.fighting.materialmanagementsystem.activities.MaterialsListActivity;
 import com.fighting.materialmanagementsystem.activities.RecordDetailsActivity;
 import com.fighting.materialmanagementsystem.adapters.RecordRecyclerViewAdapter;
 import com.fighting.materialmanagementsystem.tables.BorrowRecords;
+import com.fighting.materialmanagementsystem.views.IconFontView;
 
 import java.util.List;
 
@@ -22,7 +24,7 @@ import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 /**
  * Created by laisixiang on 2016/1/2.
  */
-public class RecordFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
+public class RecordFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener,View.OnClickListener{
 
     private BGARefreshLayout mRefreshLayout;
     private SwipeRefreshLayout swipeRefreshLayout;
@@ -33,6 +35,8 @@ public class RecordFragment extends Fragment implements SwipeRefreshLayout.OnRef
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_record, container, false);
+
+        ((IconFontView) view.findViewById(R.id.iconfont_addrecord)).setOnClickListener(this);
         initSwipeRefreshLayout(view);
         initRecyclerView(view);
         return view;
@@ -72,5 +76,15 @@ public class RecordFragment extends Fragment implements SwipeRefreshLayout.OnRef
     public void onRefresh() {
         getBorrowRecords();
         rvAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.iconfont_addrecord:
+                startActivity(new Intent(getActivity(), MaterialsListActivity.class));
+                break;
+
+        }
     }
 }

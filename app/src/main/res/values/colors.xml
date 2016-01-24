@@ -6,4 +6,12 @@
 
     <color name="tab_gray">#acacac</color>
     <color name="swipe_bg">#ffff</color>
+
+    <color name="item_department_unselect">#c7c7c7</color>
+    <color name="item_dapartment_count_bg">#ff0a0a</color>
+
+    <color name="bottom_account_height">#3b3b3b</color>
+
+    <color name="text_normal_gray">#696969</color>
+    <color name="money_orange">#ff2705</color>
 </resources>

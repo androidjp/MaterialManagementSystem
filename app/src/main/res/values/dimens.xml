@@ -8,4 +8,11 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="tab_height">58dp</dimen>
     <dimen name="tab_fab_height">74dp</dimen>
+    <dimen name="bottom_account_height">45dp</dimen>
+
+    <!-- toolbar title text size -->
+    <dimen name="toolbar_title_size">18sp</dimen>
+    <!-- toolbar iconfont text size -->
+    <dimen name="toolbar_iconfont_size">20sp</dimen>
+
 </resources>
