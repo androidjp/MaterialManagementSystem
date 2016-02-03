@@ -61,8 +61,8 @@ public class MaterialsRecyclerViewAdapter extends RecyclerView.Adapter<Materials
         holder.if_material_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int i=1;
-                for(;i<=MyApplication.ShoppingCar.size();i++){
+                int i=0;
+                for(;i<MyApplication.ShoppingCar.size();i++){
                     if(materials_department.get(position).getObjectId().equals(MyApplication.ShoppingCar.get(i).getMaterial().getObjectId())){
                         MyApplication.ShoppingCar.get(i).addCourtInCar(1);
                         break;
@@ -81,8 +81,8 @@ public class MaterialsRecyclerViewAdapter extends RecyclerView.Adapter<Materials
         holder.if_material_remove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int i=1;
-                for(;i<=MyApplication.ShoppingCar.size();i++){
+                int i=0;
+                for(;i<MyApplication.ShoppingCar.size();i++){
                     if(materials_department.get(position).getObjectId().equals(MyApplication.ShoppingCar.get(i).getMaterial().getObjectId())){
                         MyApplication.ShoppingCar.get(i).removeCourtInCar(1);
                         break;

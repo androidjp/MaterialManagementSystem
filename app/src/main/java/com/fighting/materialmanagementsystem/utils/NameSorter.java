@@ -3,6 +3,8 @@ package com.fighting.materialmanagementsystem.utils;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.fighting.materialmanagementsystem.beans._User;
+
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -13,16 +15,14 @@ import java.util.Locale;
  * Created by laisixiang on 2016/2/3.
  */
 public class NameSorter {
-    private List<String> list;
-
-    public static List<String> sort(List<String> list){
-        List<String> outputList = new LinkedList<String>();
+    public static List<_User> sort(List<_User> list){
+        List<_User> outputList = new LinkedList<_User>();
 
         outputList.add(list.get(0));
         for(int i=1;i<list.size();i++){
-            char temp_char=HanziToPinyin.getInstance().get(list.get(i).charAt(0)+"").get(1).target.charAt(0);
-            for(int j=0;j<list.size();j++){
-                if (temp_char>=HanziToPinyin.getInstance().get(outputList.get(j).charAt(0)+"").get(1).target.charAt(0)){
+            char temp_char=HanziToPinyin.getInstance().get(list.get(i).getUsername().charAt(0)+"").get(0).target.charAt(0);
+            for(int j=0;j<outputList.size();j++){
+                if (temp_char>=HanziToPinyin.getInstance().get(outputList.get(j).getUsername().charAt(0)+"").get(0).target.charAt(0)){
                     outputList.add(list.get(i));
                 }else {
                     outputList.add(j,list.get(i));

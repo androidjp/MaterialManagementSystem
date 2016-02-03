@@ -11,6 +11,5 @@ public class ListToSQLite {
     private List input;
     private Cursor output;
 
-
 }
 
