@@ -21,5 +21,6 @@
     <string name="iconfont_money_sigal">&#xe600;</string>
     <string name="iconfont_material_add">&#xe600;</string>
     <string name="iconfont_material_remove">&#xe600;</string>
+    <string name="iconfont_shopcar">&#xe600;</string>
 
 </resources>

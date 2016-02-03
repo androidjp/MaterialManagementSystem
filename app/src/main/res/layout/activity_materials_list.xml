@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="true"
     android:fitsSystemWindows="true">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/bottom_account_height"
+        android:orientation="vertical"
 
         >
 
@@ -23,78 +22,118 @@
                 android:id="@+id/if_back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/icon_back_bar"
-                android:layout_margin="4dp"
-                android:padding="10dp"
-                android:textSize="@dimen/toolbar_iconfont_size"
-                android:gravity="center"
-                android:clickable="true"
                 android:layout_centerVertical="true"
+                android:layout_margin="4dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/icon_back_bar"
                 android:textColor="#ffffff"
-                />
+                android:textSize="@dimen/toolbar_iconfont_size" />
 
             <com.fighting.materialmanagementsystem.views.IconFontView
                 android:id="@+id/if_search"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/iconfont_search"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:gravity="center"
-                android:textSize="@dimen/toolbar_iconfont_size"
-                android:clickable="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
+                android:clickable="true"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/iconfont_search"
                 android:textColor="#ffffff"
-                />
+                android:textSize="@dimen/toolbar_iconfont_size" />
 
             <TextView
                 android:id="@+id/title_self_toolbar"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/if_back"
                 android:gravity="center"
                 android:text="申请租借"
-                android:layout_toRightOf="@id/if_back"
-                android:layout_marginLeft="10dp"
-                android:textSize="@dimen/toolbar_title_size"
-                android:textColor="#ffffff"/>
+                android:textColor="#ffffff"
+                android:textSize="@dimen/toolbar_title_size" />
         </RelativeLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal">
+
             <android.support.v7.widget.RecyclerView
-                android:layout_weight="7"
                 android:id="@+id/departments_recyclerview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </android.support.v7.widget.RecyclerView>
-
-            <View
-                android:layout_width="2dp"
                 android:layout_height="match_parent"
-                android:background="@color/tab_gray"/>
+                android:layout_weight="7"></android.support.v7.widget.RecyclerView>
 
             <android.support.v7.widget.RecyclerView
-                android:layout_weight="3"
                 android:id="@+id/materials_recyclerview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </android.support.v7.widget.RecyclerView>
+                android:layout_height="match_parent"
+                android:layout_weight="3"></android.support.v7.widget.RecyclerView>
         </LinearLayout>
 
     </LinearLayout>
 
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/bottom_account_height"
         android:layout_alignParentBottom="true"
-        android:background="@color/bottom_account_height"
-        android:alpha="20">
+        android:background="@color/shoppingcar_bar"
+        android:alpha="0.7">
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/bottom_account_height"
+            android:id="@+id/layout_shoppingcar_button">
+
+            <com.fighting.materialmanagementsystem.views.IconFontView
+                android:layout_width="@dimen/bottom_account_height"
+                android:layout_height="@dimen/bottom_account_height"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="@string/iconfont_shopcar"
+                android:textColor="@color/pure_white"
+                android:textSize="@dimen/toolbar_iconfont_size" />
+
+            <com.fighting.materialmanagementsystem.views.IconFontView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingRight="4dp"
+                android:text="@string/iconfont_money_sigal"
+                android:textColor="@color/pure_white" />
+
+            <TextView
+                android:id="@+id/tv_shoppingcar_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15"
+                android:textColor="@color/pure_white"
+                android:textSize="25sp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_shopcar_commit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/shoppingcar_commit"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:textSize="23sp"
+            android:textColor="@color/pure_white"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_centerVertical="true"
+            android:text="     确   定     "/>
+
+    </RelativeLayout>
 
 </RelativeLayout>
 

@@ -1,33 +1,53 @@
-package com.fighting.materialmanagementsystem.tables;
+package com.fighting.materialmanagementsystem.beans;
+
+
 
 import java.io.Serializable;
+import java.util.List;
 
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.datatype.BmobDate;
 
 /**
- * Created by laisixiang on 2016/1/20.
+ * Created by JP on 2016/1/20.
  */
-public class BorrowRecords extends BmobObject implements Serializable{
-//    private String objectId;
+public class BorrowRecord extends BmobObject implements Serializable{
     private _User lender;
     private _User borrower;
-    private MoneyCodes moneyCode;
-//    private Date createdAt;
+    private List<MoneyCode> moneyCode;
     private BmobDate actuallyStartAt;
     private BmobDate startAt;
     private BmobDate endAt;
     private BmobDate actuallyEndAt;
     private BmobDate responseAt;
-    private boolean isAccept;
-//    private Date updatedAt;
-    private Materials materialName;
+    private Integer isAccept;
+    private Material materialName;
     private Integer matarialNumber;
-    private Integer recordCode;
+    private String recordCode;
     private Integer inNumber;
     private Integer outNumber;
     private Integer payMoney;
     private String extra;
+
+    public BorrowRecord(_User lender, _User borrower, List<MoneyCode> moneyCode, BmobDate actuallyStartAt, BmobDate startAt, BmobDate endAt, BmobDate actuallyEndAt, BmobDate responseAt, Integer isAccept, Material materialName, Integer matarialNumber, String recordCode, Integer inNumber, Integer outNumber, Integer payMoney, String extra) {
+        this.lender = lender;
+        this.borrower = borrower;
+        this.moneyCode = moneyCode;
+        this.actuallyStartAt = actuallyStartAt;
+        this.startAt = startAt;
+        this.endAt = endAt;
+        this.actuallyEndAt = actuallyEndAt;
+        this.responseAt = responseAt;
+        this.isAccept = isAccept;
+        this.materialName = materialName;
+        this.matarialNumber = matarialNumber;
+        this.recordCode = recordCode;
+        this.inNumber = inNumber;
+        this.outNumber = outNumber;
+        this.payMoney = payMoney;
+        this.extra = extra;
+
+    }
 
     public _User getLender() {
         return lender;
@@ -37,7 +57,7 @@ public class BorrowRecords extends BmobObject implements Serializable{
         return borrower;
     }
 
-    public MoneyCodes getMoneyCode() {
+    public List<MoneyCode> getMoneyCode() {
         return moneyCode;
     }
 
@@ -61,11 +81,11 @@ public class BorrowRecords extends BmobObject implements Serializable{
         return responseAt;
     }
 
-    public boolean isAccept() {
+    public Integer getIsAccept() {
         return isAccept;
     }
 
-    public Materials getMaterialName() {
+    public Material getMaterialName() {
         return materialName;
     }
 
@@ -73,7 +93,7 @@ public class BorrowRecords extends BmobObject implements Serializable{
         return matarialNumber;
     }
 
-    public Integer getRecordCode() {
+    public String getRecordCode() {
         return recordCode;
     }
 
@@ -92,4 +112,5 @@ public class BorrowRecords extends BmobObject implements Serializable{
     public String getExtra() {
         return extra;
     }
+
 }

@@ -3,15 +3,31 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#3F51B5</color>
     <color name="colorAccent">#FF4081</color>
+    
+    <color name="pure_white">#ffffff</color>
+    <color name="pure_black">#000000</color>
 
+    <!-- tabs未选中灰 -->
     <color name="tab_gray">#acacac</color>
+
+    <!-- swipefleshLayout -->
     <color name="swipe_bg">#ffff</color>
 
-    <color name="item_department_unselect">#c7c7c7</color>
+    <!-- 租借物资列表,部门部分item -->
+    <color name="item_department_unselect">#b6b6b6</color>
     <color name="item_dapartment_count_bg">#ff0a0a</color>
 
-    <color name="bottom_account_height">#3b3b3b</color>
+    <!--租借物资列表,购物车bar-->
+    <color name="shoppingcar_bar">#363636</color>
+    <color name="shoppingcar_commit">#23d100</color>
 
+    <!-- 租借物资列表,物资部分item -->
     <color name="text_normal_gray">#696969</color>
     <color name="money_orange">#ff2705</color>
+
+    <!-- “逾 期”等订单状态背景色 -->
+    <color name="state_accept">#00ff00</color>
+    <color name="state_reduce">#2950ff</color>
+    <color name="state_wait">#ffe600</color>
+    <color name="state_out_date">#ff0000</color>
 </resources>

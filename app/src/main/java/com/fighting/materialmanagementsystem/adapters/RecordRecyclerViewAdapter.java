@@ -1,5 +1,6 @@
 package com.fighting.materialmanagementsystem.adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,19 +8,21 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.fighting.materialmanagementsystem.R;
-import com.fighting.materialmanagementsystem.tables.BorrowRecords;
+import com.fighting.materialmanagementsystem.beans.BorrowRecord;
 
 import java.util.List;
 
 /**
  * Created by laisixiang on 2016/1/3.
  */
-public class RecordRecyclerViewAdapter extends RecyclerView.Adapter<RecordRecyclerViewAdapter.mViewHolder> implements View.OnClickListener{
+public class RecordRecyclerViewAdapter extends RecyclerView.Adapter<RecordRecyclerViewAdapter.mViewHolder> {
 
-    List<BorrowRecords> recordsList;
+    List<BorrowRecord> recordsList;
+    Context context;
 
-    public RecordRecyclerViewAdapter(List<BorrowRecords> recordsList){
+    public RecordRecyclerViewAdapter(Context context,List<BorrowRecord> recordsList){
         this.recordsList = recordsList;
+        this.context=context;
     }
 
     @Override
@@ -29,33 +32,39 @@ public class RecordRecyclerViewAdapter extends RecyclerView.Adapter<RecordRecycl
     }
 
     @Override
-    public void onBindViewHolder(mViewHolder holder, int position) {
+    public void onBindViewHolder(mViewHolder holder, final int position) {
         holder.tv_person_borrower.setText(recordsList.get(position).getBorrower().getUsername());
         holder.tv_person_lender.setText(recordsList.get(position).getLender().getUsername());
         holder.tv_extra_record.setText(recordsList.get(position).getExtra());
-        holder.tv_department_borrower.setText(recordsList.get(position).getBorrower().getOrgization().getDepartment());
-        holder.tv_department_lender.setText(recordsList.get(position).getLender().getOrgization().getDepartment());
+        holder.tv_department_borrower.setText(recordsList.get(position).getBorrower().getOrganization().getDepartment());
+        holder.tv_department_lender.setText(recordsList.get(position).getLender().getOrganization().getDepartment());
+        holder.tv_time_begin.setText(recordsList.get(position).getStartAt().getDate());
+        holder.tv_time_end.setText(recordsList.get(position).getEndAt().getDate());
 //        holder.tv_time_begin.setText(recordsList.get(position).getStartAt().getYear()+" 年 "+recordsList.get(position).getStartAt().getMonth()+" 月 "+recordsList.get(position).getStartAt().getDay()+" 日 ");
 //        holder.tv_time_end.setText(recordsList.get(position).getEndAt().getYear()+" 年 "+recordsList.get(position).getEndAt().getMonth()+" 月 "+recordsList.get(position).getEndAt().getYear()+" 日 ");
-        holder.tv_time_end.setText(recordsList.get(position).getEndAt().toString());
 
-//        if(null == recordsList.get(position).isAccept()){
-//
-//        }
-//        if(recordsList.get(position).isAccept()){
-//            if((new Date(System.currentTimeMillis()).compareTo(recordsList.get(position).getActuallyStartAt()))<0){
-//                holder.tv_state.setText("已批准");
-//            }else{
-//                if((new Date(System.currentTimeMillis()).compareTo(recordsList.get(position).getEndAt()))<0){
-//
-//                }else{
-//                    holder.tv_state.setText("已借出");
-//                }
+        if(recordsList.get(position).getIsAccept()==0){
+            holder.tv_state.setText("待批准");
+            holder.tv_state.setBackgroundColor(context.getResources().getColor(R.color.state_wait));
+        }else if(recordsList.get(position).getIsAccept()==2){
+            holder.tv_state.setText("不批准");
+            holder.tv_state.setBackgroundColor(context.getResources().getColor(R.color.state_reduce));
+        }else {
+//            if ((new Date(System.currentTimeMillis()).compareTo(recordsList.get(position).getEndAt()))<0){
+//                holder.tv_state.setText("租借中");
+//                holder.tv_state.setBackgroundColor(context.getResources().getColor(R.color.state_accept));
+//            }else {
+//                holder.tv_state.setText("逾 期");
+//                holder.tv_state.setBackgroundColor(context.getResources().getColor(R.color.state_out_date));
 //            }
-//        }else if(){
-//            holder.tv_state.setText("已拒绝");
-//        }
+        }
 
+        holder.viewGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListner.onItemClick(position);
+            }
+        });
 
     }
 
@@ -66,6 +75,7 @@ public class RecordRecyclerViewAdapter extends RecyclerView.Adapter<RecordRecycl
 
 
     class mViewHolder extends RecyclerView.ViewHolder{
+        ViewGroup viewGroup;
         TextView tv_department_lender;
         TextView tv_department_borrower;
         TextView tv_person_lender;
@@ -85,6 +95,7 @@ public class RecordRecyclerViewAdapter extends RecyclerView.Adapter<RecordRecycl
             tv_time_end = (TextView)itemView.findViewById(R.id.time_end);
             tv_state = (TextView) itemView.findViewById(R.id.state);
             tv_extra_record = (TextView)itemView.findViewById(R.id.extra_record);
+            viewGroup = (ViewGroup)itemView.findViewById(R.id.viewgroup_recorditem);
         }
     }
 
@@ -98,11 +109,6 @@ public class RecordRecyclerViewAdapter extends RecyclerView.Adapter<RecordRecycl
 
     public interface OnItemClickListner{
         void onItemClick(int position);
-    }
-
-    @Override
-    public void onClick(View v) {
-        //TODO
     }
 
 }

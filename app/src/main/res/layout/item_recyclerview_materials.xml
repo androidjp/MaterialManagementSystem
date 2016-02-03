@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:id="@+id/groupview_materials_item">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -86,23 +87,24 @@
         android:gravity="center">
 
         <com.fighting.materialmanagementsystem.views.IconFontView
-            android:id="@+id/material_add"
+            android:id="@+id/material_remove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
             android:textSize="20dp"
             android:text="@string/iconfont_material_remove"
-            android:visibility="invisible"
+            android:visibility="gone"
             />
 
         <EditText
             android:id="@+id/et_requested_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="invisible"/>
+            android:visibility="gone"
+            android:editable="false"/>
 
         <com.fighting.materialmanagementsystem.views.IconFontView
-            android:id="@+id/material_remove"
+            android:id="@+id/material_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
